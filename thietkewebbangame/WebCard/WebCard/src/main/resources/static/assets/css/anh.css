@@ -1,0 +1,42 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  table th {
+    background-color: #2a74c0;
+    color: black;
+  }
+  
+  table td img {
+    max-width: 100px; /* Đặt chiều rộng tối đa */
+    max-height: 60px; /* Đặt chiều cao tối đa */
+    border-radius: 8px; /* Góc bo tròn */
+    object-fit: cover; /* Cắt ảnh vừa với kích thước */
+    border: 1px solid #ddd;
+    margin: 5px auto;
+  }
+  
+  table td {
+    vertical-align: middle; /* Căn giữa nội dung theo chiều dọc */
+  }
+  
+  button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #2a74c0;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #1d5b98;
+  }

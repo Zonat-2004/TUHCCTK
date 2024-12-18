@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head th:replace="admin/fragments/head :: head"></head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+
+    <header th:replace="admin/fragments/header :: header"></header>
+    <div th:replace="admin/fragments/sidebar :: sidebar"></div>
+    <div class="content-wrapper">
+      <br><br>
+
+      <div class="container">
+        <div style="text-align: left; margin-bottom: 10px;">
+          <a th:href="@{/cards/add}" class="btn btn-success" style="font-size: medium; padding: 10px;">Thêm mới</a>
+        </div>
+        <table class="table table-bordered">
+          <tr>
+            <th style="text-align: center;">Card_ID</th>
+            <th style="text-align: center;">Game_name</th>
+            <th style="text-align: center;">Card_type</th>
+            <th style="text-align: center;">Value</th>
+            <th style="text-align: center;">Price</th>
+            <th style="text-align: center;">Stock</th>
+            <th style="text-align: center;">Ảnh</th>
+            <th style="text-align: center;">Created_at</th>
+            <th style="text-align: center;">Updated_at</th>
+            <th style="text-align: center;">Action</th>
+            </thead>
+            <tbody th:each="o : ${list}">
+              <tr>
+                <td th:text="${o.id}"></td>
+                <td th:text="${o.name}"></td>
+                <td th:text="${o.type}"></td>
+                <td th:text="${o.value}"></td>
+                <td th:text="${o.price}"></td>
+                <td th:text="${o.stock}"></td>
+                <td><img th:src="'data:image/jpeg;base64,' + ${o.image_url}" alt="ảnh lỗi" width="100"></td>
+                <td th:text="${o.created}"></td>
+                <td th:text="${o.updated}"></td>
+
+                <td style="text-align: center;">
+                  <a th:href="@{/cards/edit/{id}(id=${o.id})}" style="text-decoration: none; color: #007BFF;">✏️
+                    Edit</a> |
+                  <a th:href="@{/cards/delete/{id}(id=${o.id})}" style="text-decoration: none; color: #FF0000;"
+                    onclick="return confirm('Are you sure you want to delete this card?')">❌ Delete</a>
+                </td>
+              </tr>
+
+            </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div th:replace="admin/fragments/footer :: footer"></div>
+
+  </div>
+
+  <div th:replace="admin/fragments/script :: script"></div>
+</body>
+
+</html>

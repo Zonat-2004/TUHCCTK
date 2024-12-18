@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="TinhLam's CardShop - Mua thẻ game nhanh chóng, tiện lợi và an toàn. Giảm giá đến 30% cho mọi loại thẻ game.">
+  <meta name="keywords"
+    content="thẻ game, nạp thẻ game, Zing card, Garena, Viettel, Mobifone, Free Fire, Liên quân, PUBG">
+  <meta name="author" content="TinhLam's CardShop">
+  <meta property="og:title" content="TinhLam's CardShop - Trang bán thẻ game uy tín nhất Việt Nam">
+  <meta property="og:description" content="Giảm giá sốc lên đến 30%. Mua thẻ game ngay hôm nay tại">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <title>TinhLam's CardShop Template</title>
+
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/fontawesome.css">
+  <link rel="stylesheet" href="/assets/css/templatemo-lugx-gaming.css">
+  <link rel="stylesheet" href="/assets/css/owl.css">
+  <link rel="stylesheet" href="/assets/css/animate.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+</head>
+
+<body>
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="/home" class="logo">
+              <img src="/assets/images/logo4.png" alt="" style="width: 158px;">
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li><a href="/home" class="active">Trang chủ</a></li>
+              <li><a href="/cards">Thẻ</a></li>
+              <li><a href="/users">Người dùng</a></li>
+              <li><a href="/orders">Đơn đặt</a></li>
+              <li><a href="/admin">ADMIN</a></li>
+              <li><a href="/login">Đăng nhập</a></li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 align-self-center">
+          <div class="caption header-text">
+            <h6>Chào mừng tới web bán game của chúng tôi</h6>
+            <h2>Trang bán thẻ game uy tín nhất Việt Nam</h2>
+            <p style="font-size: 20px">"Trang web bán thẻ game nhanh chóng, tiện lợi và an toàn, mang đến trải nghiệm
+              mua sắm tốt nhất cho game thủ!"</p>
+            <div class="search-input">
+              <form id="search" action="#">
+                <input type="text" placeholder="Tìm kiếm" id='searchText' name="searchKeyword" onkeypress="handle" />
+                <button role="button">Tìm ngay</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 offset-lg-2">
+          <div class="right-image">
+            <img src="/assets/images/tocchien-icon.png" alt="">
+            <span class="price">Zing Card</span>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <a href="#">
+            <div class="item">
+              <div class="image">
+                <img src="/assets/images/g-icon.png" alt="" style="max-width: 44px;">
+              </div>
+              <h4>Mua mã thẻ game</h4>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <a href="#">
+            <div class="item">
+              <div class="image">
+                <img src="/assets/images/mathe-icon.png" alt="" style="max-width: 44px;">
+              </div>
+              <h4>Mã thẻ game</h4>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <a href="#">
+            <div class="item">
+              <div class="image">
+                <img src="/assets/images/napdt-icon.png" alt="" style="max-width: 44px;">
+              </div>
+              <h4>Nạp điện thoại</h4>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <a href="#">
+            <div class="item">
+              <div class="image">
+                <img src="/assets/images/dvtt-icon.png" alt="" style="max-width: 44px;">
+              </div>
+              <h4>Dịch vụ thanh toán</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section trending">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="section-heading">
+            <h6>Thịnh hành</h6>
+            <h2>Thẻ game thịnh hành</h2>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="main-button">
+            <a href="#">Hiện tất cả</a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6" th:each="o :${list}">
+          <div class="item">
+            <div class="thumb">
+              <a th:href="@{/cards/detail/{id}(id=${o.id})}"><img th:src="'data:image/jpeg;base64,' + ${o.image_url}"
+                  alt=""></a>
+              <span class="price" th:text="${o.price + ' VND'}"></span>
+            </div>
+            <div class="down-content">
+              <span class="category">Tên thẻ</span>
+              <h4 th:text="${o.name}"></h4>
+              <a th:href="@{/cards/detail/{id}(id=${o.id})}"><i class="fa fa-shopping-bag"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section most-played">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="section-heading">
+            <h6>TOP GAMES</h6>
+            <h2>Các game phổ biến nạp thẻ</h2>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="main-button">
+            <a href="#">Hiện tất cả</a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="item">
+            <div class="thumb">
+              <a href="#"><img src="/assets/images/lmht-icon.png" alt=""></a>
+            </div>
+            <div class="down-content">
+              <span class="category">VngGames</span>
+              <h4>Liên minh huyền thoại</h4>
+              <a href="#">Hiện</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="item">
+            <div class="thumb">
+              <a href="#"><img src="/assets/images/pubg-icon.png" alt=""></a>
+            </div>
+            <div class="down-content">
+              <span class="category">VngGames</span>
+              <h4>PUBG</h4>
+              <a href="#">Hiện</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="item">
+            <div class="thumb">
+              <a href="#"><img src="/assets/images/valorant-icon.png" alt=""></a>
+            </div>
+            <div class="down-content">
+              <span class="category">VngGames</span>
+              <h4>Valorant</h4>
+              <a href="#">Hiện</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="item">
+            <div class="thumb">
+              <a href="#"><img src="/assets/images/lq-icon.png" alt=""></a>
+            </div>
+            <div class="down-content">
+              <span class="category">Garena</span>
+              <h4>Liên quân Mobile</h4>
+              <a href="#">Hiện</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="item">
+            <div class="thumb">
+              <a href="#"><img src="/assets/images/fc-icon.png" alt=""></a>
+            </div>
+            <div class="down-content">
+              <span class="category">Garena</span>
+              <h4>FC Online</h4>
+              <a href="#">Hiện</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="item">
+            <div class="thumb">
+              <a href="#"><img src="/assets/images/ff-icon.png" alt=""></a>
+            </div>
+            <div class="down-content">
+              <span class="category">Garena</span>
+              <h4>Free Fire</h4>
+              <a href="#">Hiện</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section categories">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <div class="section-heading">
+            <h6>Ngân hàng</h6>
+            <h2>Top ngân hàng phổ biến áp dụng cho web</h2>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>VietcomBank</h4>
+            <div class="thumb">
+              <a href="#"><img src="/assets/images/logo-vietcombank.jpg" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>TechcomBank</h4>
+            <div class="thumb">
+              <a href="#"><img src="/assets/images/techcombank-icon.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>ACBBank</h4>
+            <div class="thumb">
+              <a href="#"><img src="/assets/images/logo-ngan-hang-ACB.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>VIBBank</h4>
+            <div class="thumb">
+              <a href="#"><img src="/assets/images/vibbank-icon.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>BIDVBank</h4>
+            <div class="thumb">
+              <a href="#"><img src="/assets/images/Logo-ngan-hang-BIDV.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section cta">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="shop">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="section-heading">
+                  <h6>Về shop của chúng tôi</h6>
+                  <h2>Giảm giá cực sốc - Mua thẻ game <em>rẻ nhất </em> thị trường!</h2>
+                </div>
+                <p>Nhanh tay! Chỉ hôm nay, giảm giá lên tới 30% cho mọi loại thẻ game.</p>
+                <div class="main-button">
+                  <a href="shop.html">Mua ngay</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 offset-lg-2 align-self-end">
+          <div class="subscribe">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="section-heading">
+                  <h6>Chỉ ngay hôm nay</h6>
+                  <h2>Mã giảm giá thẻ game độc quyền <em>Đăng ký ngay</em> Săn liền tay!</h2>
+                </div>
+                <div class="search-input">
+                  <form id="subscribe" action="#">
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                      placeholder="Nhập email...">
+                    <button type="submit">Đăng ký tại đây</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="col-lg-12">
+        <p class="logo" href="index.html"><img src="/assets/images/logo2.png" alt="" style="width: 158px;">Copyright ©
+          2024 Tinh Lâm's CardShop. Không được sao chép dưới bất kỳ hình thức nào. &nbsp;&nbsp; <a rel="nofollow"
+            href="https://templatemo.com" target="_blank">Design: TemplateMo</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/assets/js/isotope.min.js"></script>
+  <script src="/assets/js/owl-carousel.js"></script>
+  <script src="/assets/js/counter.js"></script>
+  <script src="/assets/js/custom.js"></script>
+
+</body>
+
+</html>

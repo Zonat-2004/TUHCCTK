@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Register Form</title>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="/login_register/css/style.css">
+</head>
+
+<body>
+  <section>
+    <form action="/register" method="post" id="registerForm">
+      <h1>Register</h1>
+
+      <div style="margin-bottom: 15px;">
+        <label for="name" style="display: block; margin-bottom: 5px;">Username:</label>
+        <input type="text" id="name" name="username" placeholder="Enter username" required
+          style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+      </div>
+
+      <div style="margin-bottom: 15px;">
+        <label for="password" style="display: block; margin-bottom: 5px;">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter password" required
+          style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+      </div>
+
+      <div style="margin-bottom: 15px;">
+        <label for="email" style="display: block; margin-bottom: 5px;">Email:</label>
+        <input type="text" id="email" name="email" placeholder="Enter email" required
+          style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+      </div>
+
+      <div style="margin-bottom: 15px;">
+        <label for="phone" style="display: block; margin-bottom: 5px;">Phone:</label>
+        <input type="number" id="phone" name="phone" step="0.01" placeholder="Enter phone" required
+          style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+      </div>
+
+      <div style="margin-bottom: 15px;">
+        <label for="updated" style="display: block; margin-bottom: 5px;">Updated At:</label>
+        <input type="datetime-local" id="updated" name="updated"
+          style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+      </div>
+
+      <button type="submit">Sign Up</button>
+
+      <div class="register">
+        <p>Already have an account? <a href="/login">Log In</a></p>
+      </div>
+    </form>
+  </section>
+
+
+</body>
+
+</html>

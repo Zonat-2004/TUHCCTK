@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="/admin/layoutAdmin">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Transactions</title>
+</head>
+
+<body>
+    <div layout:fragment="content">
+        <div
+            style="margin: 50px auto; padding: 20px; width: 400px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
+            <h1 style="text-align: center; font-family: Arial, sans-serif;">Add New Transaction</h1>
+            <form action="/transactions/add" method="post" style="display: flex; flex-direction: column; gap: 15px;">
+
+                <div>
+                    <label for="id2" style="display: block; margin-bottom: 5px; font-weight: bold;">Order ID:</label>
+                    <input type="text" id="id2" name="id2" placeholder="Enter Order ID" required
+                        style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+
+                <div>
+                    <label for="payment" style="display: block; margin-bottom: 5px; font-weight: bold;">Payment
+                        Method:</label>
+                    <select id="payment" name="payment" required
+                        style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                        <option value="" disabled selected>Select Payment Method</option>
+                        <option value="Credit Card">Credit Card</option>
+                        <option value="Paypal">Paypal</option>
+                        <option value="Bank Transfer">Bank Transfer</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="status" style="display: block; margin-bottom: 5px; font-weight: bold;">Transaction
+                        Status:</label>
+                    <select id="status" name="status" required
+                        style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                        <option value="" disabled selected>Select Status</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Completed">Completed</option>
+                        <option value="Failed">Failed</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="date" style="display: block; margin-bottom: 5px; font-weight: bold;">Transaction
+                        Date:</label>
+                    <input type="datetime-local" id="date" name="date" required
+                        style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+
+                <div style="text-align: center;">
+                    <button type="submit"
+                        style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Save</button>
+                </div>
+            </form>
+
+            <div style="margin-top: 20px; text-align: center;">
+                <a href="/transactions" style="text-decoration: none; color: #007BFF;">⬅️ Back to Transactions</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

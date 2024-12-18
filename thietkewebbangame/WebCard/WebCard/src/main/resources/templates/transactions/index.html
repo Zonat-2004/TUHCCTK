@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head th:replace="admin/fragments/head :: head"></head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+
+    <header th:replace="admin/fragments/header :: header"></header>
+    <div th:replace="admin/fragments/sidebar :: sidebar"></div>
+    <div class="content-wrapper">
+      <br><br>
+
+      <div class="container">
+        <table class="table table-bordered">
+          <div style="text-align: left; margin-bottom: 10px;">
+            <a th:href="@{/transactions/add}" class="btn btn-success" style="font-size: medium; padding: 10px;">Thêm
+              mới</a>
+          </div>
+          <thead>
+            <tr>
+              <th style="text-align: center;">Transaction_ID</th>
+              <th style="text-align: center;">Order_ID</th>
+              <th style="text-align: center;">Payment Method</th>
+              <th style="text-align: center;">Transaction Status</th>
+              <th style="text-align: center;">Transaction Date</th>
+              <th style="text-align: center;">Action</th>
+          </thead>
+          <tbody th:each="o : ${list}">
+            <tr>
+              <td th:text="${o.id}"></td>
+              <td th:text="${o.id2}"></td>
+              <td th:text="${o.payment}"></td>
+              <td th:text="${o.status}"></td>
+              <td th:text="${o.date}"></td>
+              <td>
+                <a th:href="@{/transactions/edit/{id}(id=${o.id})}" style="text-decoration: none; color: #007BFF;">✏️
+                  Edit</a> |
+                <a th:href="@{/transactions/delete/{id}(id=${o.id})}" style="text-decoration: none; color: #FF0000;"
+                  onclick="return confirm('Bạn có chắc muốn xóa không ?')">❌ Delete</a>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div th:replace="admin/fragments/footer :: footer"></div>
+
+  </div>
+  <div th:replace="admin/fragments/script :: script"></div>
+</body>
+
+</html>

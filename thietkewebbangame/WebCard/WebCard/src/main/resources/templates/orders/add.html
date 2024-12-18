@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="/admin/layoutAdmin">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <div layout:fragment="content">
+        <div class="container">
+            <div style="margin: 20px auto; width: 400px; border: 1px solid #ddd; border-radius: 8px; padding: 20px;">
+                <h1 style="text-align: center;">Add New Order</h1>
+                <form method="post" style="display: flex; flex-direction: column; gap: 15px;">
+                    <div>
+                        <label for="id2" style="display: block; margin-bottom: 5px;">User_ID:</label>
+                        <input type="text" id="id2" name="user.name" placeholder="Enter user_id" required
+                            style="width: 100%;">
+                    </div>
+
+                    <div>
+                        <label for="amount" style="display: block; margin-bottom: 5px;">Total Amount:</label>
+                        <input type="text" id="amount" name="amount" placeholder="Enter amount" required
+                            style="width: 100%;">
+                    </div>
+
+                    <div>
+                        <label for="status" style="display: block; margin-bottom: 5px;">Order Status:</label>
+                        <input type="text" id="status" name="status" placeholder="Enter status" required
+                            style="width: 100%;">
+                    </div>
+
+                    <div>
+                        <label for="created" style="display: block; margin-bottom: 5px;">Created At:</label>
+                        <input type="datetime-local" id="created" name="created" style="width: 100%;">
+                    </div>
+
+                    <div>
+                        <label for="updated" style="display: block; margin-bottom: 5px;">Updated At:</label>
+                        <input type="datetime-local" id="updated" name="updated" style="width: 100%;">
+                    </div>
+
+                    <div style="text-align: center; margin-top: 10px;">
+                        <button type="submit" style="padding: 10px 20px;">Save</button>
+                    </div>
+                </form>
+
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="/orders" style="text-decoration: none;">Back to Orders</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

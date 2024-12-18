@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="/admin/layoutAdmin">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Orders</title>
+</head>
+
+<body>
+    <div layout:fragment="content">
+        <div class="container">
+        <div style="width: 90%; max-width: 600px; margin: 30px auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px;">
+            <h1 style="text-align: center;">Edit User</h1>
+            
+            <form method="post" style="margin-top: 20px;">
+                <!-- Hidden User ID -->
+                <input type="hidden" name="user_id" value="${user.userId}">
+                
+                <!-- Username -->
+                <div style="margin-bottom: 15px;">
+                    <label for="name" style="display: block; margin-bottom: 5px;">Username:</label>
+                    <input type="text" id="name" name="name" th:value="${o.username}" 
+                           style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+                
+                <!-- Password -->
+                <div style="margin-bottom: 15px;">
+                    <label for="password" style="display: block; margin-bottom: 5px;">Password:</label>
+                    <input type="password" id="password" name="password" th:value="${o.password}" 
+                           style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+                
+                <!-- Email -->
+                <div style="margin-bottom: 15px;">
+                    <label for="email" style="display: block; margin-bottom: 5px;">Email:</label>
+                    <input type="text" id="email" name="email" th:value="${o.email}" 
+                           style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+                
+                <!-- Phone -->
+                <div style="margin-bottom: 15px;">
+                    <label for="phone" style="display: block; margin-bottom: 5px;">Phone:</label>
+                    <input type="number" id="phone" name="phone" step="0.01" th:value="${o.phone}" 
+                           style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+                
+                <!-- Created At -->
+                <div style="margin-bottom: 15px;">
+                    <label for="created" style="display: block; margin-bottom: 5px;">Created At:</label>
+                    <input type="datetime-local" id="created" name="created" 
+                           value="${#dates.format(card.created, 'yyyy-MM-dd\'T\'HH:mm')}" 
+                           style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;" required>
+                </div>
+                
+                <!-- Updated At -->
+                <div style="margin-bottom: 15px;">
+                    <label for="updated" style="display: block; margin-bottom: 5px;">Updated At:</label>
+                    <input type="datetime-local" id="updated" name="updated" 
+                           value="${#dates.format(card.updated, 'yyyy-MM-dd\'T\'HH:mm')}" 
+                           style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;" required>
+                </div>
+                
+                <!-- Submit Button -->
+                <div style="text-align: center; margin-top: 20px;">
+                    <button type="submit" style="padding: 10px 20px; border: none; background-color: #4CAF50; color: white; border-radius: 5px;">Save Changes</button>
+                </div>
+            </form>
+            
+            <!-- Back Link -->
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="/users" style="text-decoration: none; color: #007BFF;">⬅ Back to Users</a>
+            </div>
+        </div>
+</div>
+</div>
+</body>
+
+</html>

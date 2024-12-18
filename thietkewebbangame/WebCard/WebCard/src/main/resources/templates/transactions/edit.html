@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="/admin/layoutAdmin">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Transactions</title>
+</head>
+
+<body>
+    <div layout:fragment="content">
+        <div class="container">
+            <div
+                style="width: 90%; max-width: 500px; margin: 30px auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px;">
+                <h1 style="text-align: center; margin-bottom: 20px;">Edit Transaction</h1>
+
+                <form method="post">
+                    <input type="hidden" name="order_id" value="${transaction.orderId}">
+
+                    <div style="margin-bottom: 15px;">
+                        <label for="id2" style="display: block; margin-bottom: 5px;">Order ID:</label>
+                        <input type="text" id="id2" name="id2" placeholder="Enter Order ID" th:value="${o.id2}" required
+                            style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                    </div>
+
+                    <div style="margin-bottom: 15px;">
+                        <label for="payment" style="display: block; margin-bottom: 5px;">Payment Method:</label>
+                        <select id="payment" name="payment" required
+                            style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                            <option value="" disabled selected>Select Payment Method</option>
+                            <option value="Credit Card" th:selected="${o.payment == 'Credit Card'}">Credit Card</option>
+                            <option value="Paypal" th:selected="${o.payment == 'Paypal'}">Paypal</option>
+                            <option value="Bank Transfer" th:selected="${o.payment == 'Bank Transfer'}">Bank Transfer
+                            </option>
+                        </select>
+                    </div>
+
+                    <div style="margin-bottom: 15px;">
+                        <label for="status" style="display: block; margin-bottom: 5px;">Transaction Status:</label>
+                        <select id="status" name="status" required
+                            style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                            <option value="" disabled selected>Select Status</option>
+                            <option value="Pending" th:selected="${o.status == 'Pending'}">Pending</option>
+                            <option value="Completed" th:selected="${o.status == 'Completed'}">Completed</option>
+                            <option value="Failed" th:selected="${o.status == 'Failed'}">Failed</option>
+                        </select>
+                    </div>
+
+                    <div style="margin-bottom: 15px;">
+                        <label for="date" style="display: block; margin-bottom: 5px;">Transaction Date:</label>
+                        <input type="datetime-local" id="date" name="date"
+                            value="${#dates.format(o.created, 'yyyy-MM-dd\'T\'HH:mm')}" required
+                            style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                    </div>
+
+                    <div style="text-align: center; margin-top: 20px;">
+                        <button type="submit"
+                            style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px;">Save
+                            Changes</button>
+                    </div>
+                </form>
+
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="/transactions" style="text-decoration: none; color: #007BFF;">⬅️ Back to Transactions</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

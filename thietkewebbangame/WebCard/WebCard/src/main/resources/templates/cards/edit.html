@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="/admin/layoutAdmin">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Cards</title>
+</head>
+
+<body>
+    <div layout:fragment="content">
+        <div class="container">
+            <div style="margin: 30px auto; padding: 20px; width: 500px; border: 1px solid #ddd; border-radius: 10px;">
+                <h1 style="text-align: center; font-family: Arial, sans-serif;">Edit Card</h1>
+                <form method="post" enctype="multipart/form-data"
+                    style="display: flex; flex-direction: column; gap: 15px;">
+
+                    <input type="hidden" name="card_id" value="${card.cardId}">
+
+                    <div>
+                        <label for="name" style="display: block; margin-bottom: 5px;">Game Name:</label>
+                        <input type="text" id="name" name="name" th:value="${o.name}" placeholder="Enter game name"
+                            style="width: 100%; padding: 8px;">
+                    </div>
+
+                    <div>
+                        <label for="type" style="display: block; margin-bottom: 5px;">Card Type:</label>
+                        <input type="text" id="type" name="type" th:value="${o.type}" placeholder="Enter card type"
+                            style="width: 100%; padding: 8px;">
+                    </div>
+
+                    <div>
+                        <label for="value" style="display: block; margin-bottom: 5px;">Value:</label>
+                        <input type="number" id="value" name="value" th:value="${o.value}" placeholder="Enter value"
+                            style="width: 100%; padding: 8px;">
+                    </div>
+
+                    <div>
+                        <label for="price" style="display: block; margin-bottom: 5px;">Price:</label>
+                        <input type="number" id="price" name="price" step="0.01" th:value="${o.price}"
+                            placeholder="Enter price" style="width: 100%; padding: 8px;">
+                    </div>
+
+                    <div>
+                        <label for="stock" style="display: block; margin-bottom: 5px;">Stock:</label>
+                        <input type="number" id="stock" name="stock" th:value="${o.stock}"
+                            placeholder="Enter stock quantity" style="width: 100%; padding: 8px;">
+                    </div>
+
+                    <div>
+                        <label for="imageFile" style="display: block; margin-bottom: 5px;">Image:</label>
+                        <input type="file" id="imageFile" name="imageFile" th:value="${o.image_url}"
+                            style="width: 100%;">
+                        <img th:src="'data:image/jpeg;base64,' + ${o.image_url}" alt="Image preview"
+                            style="display: block; margin-top: 10px; width: 100px; height: auto; border: 1px solid #ddd; padding: 5px;">
+                    </div>
+
+                    <div>
+                        <label for="updated" style="display: block; margin-bottom: 5px;">Updated At:</label>
+                        <input type="datetime-local" id="updated" name="updated"
+                            value="${#dates.format(card.updated, 'yyyy-MM-dd\'T\'HH:mm')}"
+                            style="width: 100%; padding: 8px;" required>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 20px;">
+                        <button type="submit"
+                            style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Save
+                            Changes</button>
+                        <a href="/cards"
+                            style="margin-left: 10px; padding: 10px 20px; background-color: #f44336; color: white; text-decoration: none; border-radius: 5px;">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+</body>
+
+</html>

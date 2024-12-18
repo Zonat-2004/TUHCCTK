@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="/admin/layoutAdmin">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Orders</title>
+</head>
+
+<body>
+    <div layout:fragment="content">
+    <div class="container">
+        <div style="width: 90%; max-width: 500px; margin: 30px auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px;">
+            <h1 style="text-align: center; margin-bottom: 20px;">Add New User</h1>
+            
+            <form action="/users/add" method="post">
+                <!-- Username -->
+                <div style="margin-bottom: 15px;">
+                    <label for="name" style="display: block; margin-bottom: 5px;">Username:</label>
+                    <input type="text" id="name" name="username" placeholder="Enter username" required 
+                           style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+                
+                <!-- Password -->
+                <div style="margin-bottom: 15px;">
+                    <label for="password" style="display: block; margin-bottom: 5px;">Password:</label>
+                    <input type="text" id="password" name="password" placeholder="Enter password" required 
+                           style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+                
+                <!-- Email -->
+                <div style="margin-bottom: 15px;">
+                    <label for="email" style="display: block; margin-bottom: 5px;">Email:</label>
+                    <input type="text" id="email" name="email" placeholder="Enter email" required 
+                           style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+                
+                <!-- Phone -->
+                <div style="margin-bottom: 15px;">
+                    <label for="phone" style="display: block; margin-bottom: 5px;">Phone:</label>
+                    <input type="number" id="phone" name="phone" step="0.01" placeholder="Enter phone" required 
+                           style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+                
+                <!-- Updated At -->
+                <div style="margin-bottom: 15px;">
+                    <label for="updated" style="display: block; margin-bottom: 5px;">Updated At:</label>
+                    <input type="datetime-local" id="updated" name="updated" 
+                           style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+                
+                <!-- Submit Button -->
+                <div style="text-align: center; margin-top: 20px;">
+                    <button type="submit" style="padding: 10px 20px; border: none; background-color: #4CAF50; color: white; border-radius: 5px;">Save</button>
+                </div>
+            </form>
+            
+            <!-- Back Link -->
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="/users" style="text-decoration: none; color: #007BFF;">⬅ Back to Users</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
+

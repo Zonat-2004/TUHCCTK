@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head th:replace="admin/fragments/head :: head"></head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+
+    <header th:replace="admin/fragments/header :: header"></header>
+    <div th:replace="admin/fragments/sidebar :: sidebar"></div>
+    <div class="content-wrapper">
+      <br><br>
+
+      <div class="container">
+        <table class="table table-bordered">
+          <div style="text-align: left; margin-bottom: 10px;">
+            <a th:href="@{/orders/add}" class="btn btn-success" style="font-size: medium; padding: 10px;">Thêm mới</a>
+          </div>
+          <thead>
+            <tr>
+              <th style="text-align: center;">Order_ID</th>
+              <th style="text-align: center;">User_ID</th>
+              <th style="text-align: center;">Total Amount</th>
+              <th style="text-align: center;">Order Status</th>
+              <th style="text-align: center;">Created_at</th>
+              <th style="text-align: center;">Updated_at</th>
+              <th style="text-align: center;">Action</th>
+          </thead>
+          <tbody th:each="o : ${list}">
+            <tr>
+              <td th:text="${o.id}"></td>
+              <td th:text="${o.user.username} + '  (ID=' +${o.user.id} +')'"></td>
+              <td th:text="${o.amount}"></td>
+              <td th:text="${o.status}"></td>
+              <td th:text="${o.created}"></td>
+              <td th:text="${o.updated}"></td>
+              <td>
+                <a th:href="@{/orders/edit/{id}(id=${o.id})}" style="text-decoration: none; color: #007BFF;">✏️ Edit</a>
+                |
+                <a th:href="@{/orders/delete/{id}(id=${o.id})}" style="text-decoration: none; color: #FF0000;"
+                  onclick="return confirm('Bạn có chắc muốn xóa không ?')">❌ Delete</a>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div th:replace="admin/fragments/footer :: footer"></div>
+
+  </div>
+
+  <div th:replace="admin/fragments/script :: script"></div>
+</body>
+
+</html>

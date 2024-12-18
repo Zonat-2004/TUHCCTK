@@ -1,0 +1,100 @@
+.edit * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .edit body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  .edit .container {
+    max-width: 800px;
+    margin: 2rem auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+  }
+  
+  .edit h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #4CAF50;
+  }
+  
+  .edit form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.5rem;
+  }
+  
+  .edit .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .edit label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .edit input,
+  .edit select {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .edit input:focus,
+  .edit select:focus {
+    outline: none;
+    border-color: #4CAF50;
+  }
+  
+  .edit button[type="submit"] {
+    grid-column: 1 / -1;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  .edit .back-link {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+  
+  .edit .back-link a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .edit .back-link a:hover {
+    color: #45a049;
+  }
+  
+  @media (max-width: 768px) {
+    .edit .container {
+      width: 90%;
+      padding: 1.5rem;
+    }
+  
+    .edit form {
+      grid-template-columns: 1fr;
+    }
+  }
